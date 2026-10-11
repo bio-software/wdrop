@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include <errno.h>
 #include <limits.h>
 #include <stdbool.h>
@@ -22,7 +23,7 @@ ap *read_in_pdb (char *file_name, int *atom_num, int mdl_serno) {
 	int counter = 0;
 	int line_indicator = 0;
 	int temp_mdl_no = -10000;
-	int i;
+	int i, j;
 	ap *molecule = NULL;
 	ap *x = NULL;
 
@@ -110,6 +111,9 @@ ap *read_in_pdb (char *file_name, int *atom_num, int mdl_serno) {
 				temp [PDB_OCC_B_LENGTH] = '\0';					
  				(molecule+counter)->b_factor = atof(temp);
 				str0 (temp, NUM_LENGTH);
+				str0 ((molecule+counter)->element, PDB_ELEMENT_LENGTH+1);	// element symbol, columns 77-78 (empty if absent)
+				for (i = 76, j = 0; i < 76+PDB_ELEMENT_LENGTH && i < (int)strlen(line); i++)
+					if ( isalpha((unsigned char)line[i]) ) (molecule+counter)->element[j++] = (char)toupper((unsigned char)line[i]);
 				counter++;
 				}
 			str0 (line, MAX_LINE_LENGTH); 

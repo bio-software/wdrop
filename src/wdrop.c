@@ -50,7 +50,10 @@ static double sigma_from_atom(const ap *a) {
     char e;
     if (!a) return 1.70;
 
-    e = first_alpha_upper(a->pdb_type, sizeof(a->pdb_type));
+    if (a->element[0] != '\0' && a->element[1] != '\0') return 1.70;
+
+    e = a->element[0];
+    if (e == '\0') e = first_alpha_upper(a->pdb_type, sizeof(a->pdb_type));
     if (e == '\0') e = first_alpha_upper(a->mol2_type, sizeof(a->mol2_type));
     if (e == '\0') e = first_alpha_upper(a->pdbqt_type, sizeof(a->pdbqt_type));
 

@@ -19,6 +19,7 @@ struct pdb_atoms {
 	double z_coord;
 	double occ;
 	double b_factor;
+	char element [PDB_ELEMENT_LENGTH+1];
 	char mol2_type [MOL2_TYPE_LENGTH+1];
 	double mol2_charge;
 	char pdbqt_type [PDBQT_TYPE_LENGTH+1];
