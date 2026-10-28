@@ -60,3 +60,19 @@ Example:
 ## Acknowledgments
 
 This project reuses code from **MobyWat** http://www.mobywat.com.
+
+## License
+
+Copyright (C) 2026 SovietSpy2
+
+wdrop is free software: you can redistribute it and/or modify it under the terms of the
+GNU General Public License as published by the Free Software Foundation, either version 3
+of the License, or (at your option) any later version. It is distributed in the hope that
+it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See [LICENSE](LICENSE) for the full
+text of the GNU General Public License.
+
+wdrop is a modified version of code from MobyWat, Copyright (C) 2015, 2016 Csaba Hetenyi,
+PhD, which is distributed under the GNU General Public License version 3 or (at your
+option) any later version. Parts of the source code in `src/` are derived from MobyWat and
+have been modified for wdrop since 2026.
