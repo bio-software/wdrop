@@ -62,6 +62,7 @@ static double sigma_from_atom(const ap *a) {
         case 'O': return 1.52;
         case 'N': return 1.55;
         case 'C': return 1.70;
+        case 'P': return 1.80;   /* nucleic-acid backbone phosphorus (Bondi vdW radius) */
         case 'S': return 1.80;
         default:  return 1.70;
     }
